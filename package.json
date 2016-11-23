@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "author": "Jake Luer <jake@alogicalparadox.com>",
+  "name": "chai-docs",
+  "description": "Chaijs.com documentation site.",
+  "version": "1.0.0",
+  "homepage": "http://chaijs.com",
+  "repository": "git://github.com/chaijs/chai-docs.git",
+  "dependencies": {
+    "chai": "*",
+    "codex": "0.2.x",
+    "npm-plugin-fetcher": "1.0.0",
+    "dox": "^0.8.0"
+  }
+}

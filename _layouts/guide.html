@@ -1,0 +1,44 @@
+---
+layout: default
+bodyClass: guide
+---
+
+<nav id="guide" class="sidebar sticky">
+
+    {% assign guides = site.guides | sort: 'order' %}
+    {% for guide in guides %}
+      {% assign slug = guide.title | slugify %}
+      {% capture url %}{{ site.github.url }}{{ guide.url }}{% endcapture %}
+      {% capture active %}{% if page.url == guide.url %} active{% endif %}{% endcapture %}
+      {% capture expanded %}{% if page.url == guide.url %} expanded{% endif %}{% endcapture %}
+      <div id="{{ slug }}" class="item primary{{ active }}{{ expanded }}">
+          {% if forloop.first %}
+            <span class="star"></span>
+          {% else %}
+            <span class="expand">+</span>
+            <span class="collapse">-</span>
+          {% endif %}
+          <a href="{{ url }}" class="title">{{ guide.title }}</a>
+      </div>
+      {% if guide.headings %}
+      <div id="{{ slug }}" class="subitems">
+          {% for heading in guide.headings %}
+          {% assign headingSlug = heading | slugify %}
+          <a href="#{{ headingSlug }}" class="item secondary group-{{ slug }}{{ expanded }}">{{ heading }}</a>
+          {% endfor %}
+      </div>
+      {% endif %}
+      {% if forloop.first %}
+        <div class="line"></div>
+      {% endif %}
+    {% endfor %}
+</nav>
+<div class="documentation">
+    <div class="wrap">
+        <div class="rendered">
+            {{ content }}
+        </div>
+    </div>
+</div>
+
+<script src="{{site.github.url}}/js/guide.js"></script>
