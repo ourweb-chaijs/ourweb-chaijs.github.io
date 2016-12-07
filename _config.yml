@@ -1,7 +1,6 @@
 title: Chai
 description: |
-  Chai is a BDD / TDD assertion library for [node](http://nodejs.org) and the
-  browser that can be delightfully paired with any javascript testing framework.
+  Chai 是一个针对 [node](http://nodejs.org) 和浏览器的行为驱动开发/测试驱动开发断言库，可以自由的搭配任何javascript测试框架。
 baseurl: ""
 
 safe: true

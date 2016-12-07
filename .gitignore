@@ -21,3 +21,5 @@ chai.js
 _site
 .sass-cache
 plugins/*.md
+
+.idea
